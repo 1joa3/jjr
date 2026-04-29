@@ -1,0 +1,147 @@
+/* Benefits Component Styles */
+
+.benefits {
+    padding: var(--spacing-24) 0;
+    background: linear-gradient(to bottom right, #dbeafe, #eff6ff);
+}
+
+.container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-8);
+    }
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-16);
+}
+
+.subtitle {
+    color: var(--color-primary);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: var(--text-sm);
+    margin-bottom: var(--spacing-4);
+}
+
+.title {
+    font-size: 1.875rem;
+    font-weight: var(--font-bold);
+    color: var(--color-slate-900);
+    margin-bottom: var(--spacing-6);
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: var(--text-4xl);
+    }
+}
+
+.description {
+    color: var(--color-slate-600);
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--spacing-4);
+    }
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: var(--spacing-6);
+    border-radius: var(--radius-2xl);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), #60A5FA);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.card:hover, .activeCard {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(14, 75, 168, 0.15);
+    border-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.card:hover::before, .activeCard::before {
+    transform: scaleX(1);
+}
+
+.iconWrapper {
+    display: inline-flex;
+    padding: var(--spacing-3, 0.75rem);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-slate-50);
+    margin-bottom: var(--spacing-4);
+    transition: background-color var(--transition-base);
+    align-self: flex-start;
+}
+
+.card:hover .iconWrapper, .activeCard .iconWrapper {
+    background-color: var(--color-primary);
+}
+
+.icon {
+    color: var(--color-primary);
+    transition: color var(--transition-base);
+}
+
+.card:hover .icon, .activeCard .icon {
+    color: var(--color-white);
+}
+
+.cardTitle {
+    font-size: var(--text-lg, 1.125rem);
+    font-weight: var(--font-bold);
+    color: var(--color-slate-900);
+    margin-bottom: var(--spacing-2);
+}
+
+.cardDescription {
+    color: var(--color-slate-600);
+    line-height: var(--leading-relaxed);
+    font-size: var(--text-sm, 0.875rem);
+}

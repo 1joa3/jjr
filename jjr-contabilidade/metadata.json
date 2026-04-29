@@ -1,0 +1,9 @@
+
+{
+  "name": "JJR Contabilidade Estratégica",
+  "description": "Site profissional de contabilidade estratégica focado em crescimento empresarial, segurança fiscal e transparência financeira.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

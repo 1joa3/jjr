@@ -1,0 +1,214 @@
+/* Hero Component Styles */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+    background-color: var(--color-white);
+}
+
+.container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-12);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-8);
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-md);
+    background-color: var(--color-slate-100);
+    color: var(--color-primary);
+    font-weight: var(--font-semibold);
+    font-size: var(--text-sm);
+    width: fit-content;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: var(--font-bold);
+    color: var(--color-slate-900);
+    line-height: var(--leading-tight);
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: var(--text-5xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    .title {
+        font-size: var(--text-6xl);
+    }
+}
+
+.titleHighlight {
+    color: var(--color-primary);
+}
+
+.description {
+    font-size: var(--text-lg);
+    color: var(--color-slate-600);
+    max-width: 40rem;
+    line-height: var(--leading-relaxed);
+}
+
+@media (min-width: 768px) {
+    .description {
+        font-size: var(--text-xl);
+    }
+}
+
+.description strong {
+    color: var(--color-slate-700);
+}
+
+.benefitsBox {
+    background-color: var(--color-slate-50);
+    border-left: 4px solid var(--color-primary);
+    padding: var(--spacing-4);
+    border-radius: var(--radius-md);
+}
+
+.benefitsList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+    color: var(--color-slate-700);
+}
+
+.benefitItem {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-2);
+}
+
+.benefitIcon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.ctaButtons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+@media (min-width: 640px) {
+    .ctaButtons {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.primaryButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-4) var(--spacing-8);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: var(--font-semibold);
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-base);
+}
+
+.primaryButton:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.primaryButton svg {
+    transition: transform var(--transition-base);
+}
+
+.primaryButton:hover svg {
+    transform: translateX(0.25rem);
+}
+
+.secondaryButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-4) var(--spacing-8);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-slate-300);
+    color: var(--color-slate-700);
+    font-weight: var(--font-semibold);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-base);
+}
+
+.secondaryButton:hover {
+    border-color: var(--color-primary);
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-6);
+    padding-top: var(--spacing-4);
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    color: var(--color-slate-600);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+}
+
+.feature svg {
+    color: var(--color-primary);
+}
+
+.imageWrapper {
+    flex: 1;
+    position: relative;
+}
+
+.imageContainer {
+    position: relative;
+    z-index: 10;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+}
+
+.imageContainer img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}

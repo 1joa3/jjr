@@ -1,0 +1,15 @@
+/* ============================================
+   INDEX.CSS - ENTRY POINT
+   JJR CONTABILIDADE
+   ============================================ */
+
+/* Import Variables First */
+@import './styles/variables.css';
+
+/* Import Global Styles */
+@import './styles/global.css';
+
+/* Import Utilities */
+@import './styles/utils/animations.css';
+
+/* Note: CSS Modules are imported directlyin the React components */

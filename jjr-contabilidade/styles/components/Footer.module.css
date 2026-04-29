@@ -1,0 +1,135 @@
+/* Footer Component Styles */
+
+.footer {
+    background-color: var(--color-slate-900);
+    color: var(--color-white);
+    padding: var(--spacing-16) 0 var(--spacing-8);
+}
+
+.container {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-8);
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-12);
+    margin-bottom: var(--spacing-12);
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-4);
+}
+
+.logoIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+}
+
+.logoIcon span {
+    color: var(--color-white);
+    font-weight: var(--font-bold);
+    font-size: var(--text-xl);
+}
+
+.logoText {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    letter-spacing: -0.025em;
+    color: var(--color-white);
+}
+
+.description {
+    color: var(--color-slate-400);
+    line-height: var(--leading-relaxed);
+}
+
+.columnTitle {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--spacing-2);
+}
+
+.linkList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.link {
+    color: var(--color-slate-400);
+    transition: color var(--transition-base);
+}
+
+.link:hover {
+    color: var(--color-white);
+}
+
+.divider {
+    height: 1px;
+    background-color: var(--color-slate-700);
+    margin: var(--spacing-8) 0;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .bottom {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.copyright {
+    color: var(--color-slate-400);
+    font-size: var(--text-sm);
+}
+
+.socialLinks {
+    display: flex;
+    gap: var(--spacing-4);
+}
+
+.socialLink {
+    color: var(--color-slate-400);
+    transition: color var(--transition-base);
+}
+
+.socialLink:hover {
+    color: var(--color-white);
+}
