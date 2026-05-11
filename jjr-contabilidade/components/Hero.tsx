@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import styles from '../styles/components/Hero.module.css';
 
 // Importando a imagem do Hero
-import homeImg from '../images/homeimg.jpeg';
+import homeImg from '../images/homeimg.webp';
 
 // Componente Hero - seção principal/banner do site
 export const Hero: React.FC = () => {
@@ -79,6 +79,7 @@ export const Hero: React.FC = () => {
             <img
               src={homeImg}
               alt="Contabilidade estratégica"
+              fetchPriority="high"
             />
           </div>
         </div>

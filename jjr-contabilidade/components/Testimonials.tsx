@@ -3,9 +3,9 @@ import React, { useRef, useEffect, useState } from 'react';
 import { Star, Quote, CheckCircle2 } from 'lucide-react';
 
 // Importando as imagens locais
-import logoPPS from '../images/logo PPS.jpeg';
-import imgR from '../images/R.jpeg';
-import imgC from '../images/logo CR .jpeg';
+import logoPPS from '../images/logo PPS.webp';
+import imgR from '../images/R.webp';
+import imgC from '../images/logo CR .webp';
 
 
 // Dados dos depoimentos de clientes
