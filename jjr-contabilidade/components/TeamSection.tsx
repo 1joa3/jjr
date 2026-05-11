@@ -51,7 +51,6 @@ export const TeamSection: React.FC = () => {
                 src={socios}
                 alt="Nossa equipe"
                 className="rounded-3xl shadow-2xl relative z-10 w-full object-cover"
-                loading="lazy"
               />
             </div>
           </div>
@@ -83,7 +82,7 @@ export const TeamSection: React.FC = () => {
                     className={`group cursor-pointer rounded-2xl bg-white border border-slate-100 shadow-sm transition-all duration-500 ease-out ${isExpanded ? 'p-8 flex flex-col items-center text-center ring-2 ring-blue-500 shadow-xl scale-[1.02] bg-gradient-to-b from-white to-blue-50/30' : 'p-5 flex items-center gap-5 hover:shadow-md hover:-translate-y-1'}`}
                   >
                     <div className={`overflow-hidden shadow-md shrink-0 transition-all duration-500 ease-out group-hover:ring-4 group-hover:ring-blue-100 ${isExpanded ? 'w-40 h-40 rounded-full mb-6 ring-4 ring-blue-200' : 'w-16 h-16 rounded-full ring-2 ring-slate-50'}`}>
-                      <img src={member.image} alt={member.name} className={`w-full h-full object-cover object-top transition-all duration-700 ease-out ${isExpanded ? 'scale-110 rotate-1' : 'group-hover:scale-110'}`} loading="lazy" />
+                      <img src={member.image} alt={member.name} className={`w-full h-full object-cover object-top transition-all duration-700 ease-out ${isExpanded ? 'scale-110 rotate-1' : 'group-hover:scale-110'}`} />
                     </div>
                     <div className={`${isExpanded ? 'w-full' : ''}`}>
                       <p className={`font-bold text-slate-900 transition-all duration-500 ease-out ${isExpanded ? 'text-2xl mb-1' : 'text-lg'}`}>{member.name}</p>

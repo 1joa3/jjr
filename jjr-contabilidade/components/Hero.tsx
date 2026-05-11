@@ -79,7 +79,6 @@ export const Hero: React.FC = () => {
             <img
               src={homeImg}
               alt="Contabilidade estratégica"
-              fetchPriority="high"
             />
           </div>
         </div>
