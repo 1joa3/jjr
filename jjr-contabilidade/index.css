@@ -3,13 +3,16 @@
    JJR CONTABILIDADE
    ============================================ */
 
+/* Tailwind CSS v4 - processado pelo Vite (substitui o CDN) */
+@import "tailwindcss";
+
 /* Import Variables First */
-@import './styles/variables.css';
+@import './styles/variables.css' layer(base);
 
 /* Import Global Styles */
-@import './styles/global.css';
+@import './styles/global.css' layer(base);
 
 /* Import Utilities */
-@import './styles/utils/animations.css';
+@import './styles/utils/animations.css' layer(utilities);
 
 /* Note: CSS Modules are imported directlyin the React components */
