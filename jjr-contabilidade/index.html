@@ -1,60 +1,163 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Título SEO corrigido -->
-    <title>JJR Contabilidade | Assessoria Contábil e Abertura de Empresa</title>
-
-    <!-- Meta tags SEO -->
-    <meta name="description" content="JJR Contabilidade: Assessoria contábil especializada, abertura de empresa, planejamento tributário e segurança jurídica para o seu negócio." />
-    <meta name="robots" content="index, follow" />
+    <!-- SEO principal -->
+    <title>JJR Contabilidade | Contador em Sapé-PB e Abertura de Empresa</title>
+    <meta name="description" content="Escritório de contabilidade em Sapé-PB com CRC ativo. Abertura de empresa, contabilidade mensal, troca de contador, MEI para ME e Imposto de Renda. Atendimento 100% online." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href="https://jjrcontabilidade.com.br/" />
+    <meta name="theme-color" content="#0b1b38" />
 
-    <!-- Open Graph / Google Search (logo e título nos resultados) -->
+    <!-- SEO local -->
+    <meta name="geo.region" content="BR-PB" />
+    <meta name="geo.placename" content="Sapé" />
+
+    <!-- Open Graph (WhatsApp, Facebook, LinkedIn) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://jjrcontabilidade.com.br/" />
-    <meta property="og:title" content="JJR Contabilidade | Assessoria Contábil e Abertura de Empresa" />
-    <meta property="og:description" content="Assessoria contábil especializada, abertura de empresa, planejamento tributário e segurança jurídica para o seu negócio." />
-    <meta property="og:image" content="https://jjrcontabilidade.com.br/logo.png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
+    <meta property="og:title" content="JJR Contabilidade | Contador em Sapé-PB e Abertura de Empresa" />
+    <meta property="og:description" content="Você cuida da sua empresa. Nós cuidamos da sua contabilidade. Escritório com CRC ativo, atendimento humano e 100% online." />
+    <meta property="og:image" content="https://jjrcontabilidade.com.br/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="JJR Contabilidade - Você cuida da empresa. Nós cuidamos da contabilidade." />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:site_name" content="JJR Contabilidade" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="JJR Contabilidade | Assessoria Contábil e Abertura de Empresa" />
-    <meta name="twitter:description" content="Assessoria contábil especializada, abertura de empresa, planejamento tributário e segurança jurídica para o seu negócio." />
-    <meta name="twitter:image" content="https://jjrcontabilidade.com.br/logo.png" />
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JJR Contabilidade | Contador em Sapé-PB e Abertura de Empresa" />
+    <meta name="twitter:description" content="Escritório de contabilidade com CRC ativo. Abertura de empresa, contabilidade mensal, MEI para ME e Imposto de Renda." />
+    <meta name="twitter:image" content="https://jjrcontabilidade.com.br/og-image.jpg" />
 
     <!-- Favicon otimizado para o Google Search (múltiplos de 48px) e dispositivos Apple -->
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Trirong:wght@500&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;1,8..60,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/index.css">
 
-    <!-- Dados estruturados JSON-LD: instrui o Google sobre o nome e logo corretos -->
+    <!-- Estilos da tela de carregamento (inline para aparecer antes de qualquer outro arquivo) -->
+    <style>
+      #preloader {
+        position: fixed; inset: 0; z-index: 9999;
+        display: flex; align-items: center; justify-content: center;
+        background: #ffffff;
+        transition: opacity 500ms ease, visibility 500ms ease;
+      }
+      #preloader.is-hidden { opacity: 0; visibility: hidden; }
+      .pl-mark { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+      .pl-blocks { display: flex; gap: 4px; }
+      .pl-blocks span {
+        width: 42px; height: 48px;
+        display: flex; align-items: center; justify-content: center;
+        background: linear-gradient(#0e4ba8, #0b1b38);
+        color: #fff; font: 500 30px 'Trirong', Georgia, serif;
+        opacity: 0; transform: translateY(10px);
+        animation: pl-in 600ms cubic-bezier(.22,1,.36,1) forwards;
+      }
+      .pl-blocks span:nth-child(2) { animation-delay: 120ms; }
+      .pl-blocks span:nth-child(3) { animation-delay: 240ms; }
+      .pl-name {
+        font: 500 11px 'Trirong', Georgia, serif; letter-spacing: .32em; color: #0b1b38;
+        opacity: 0; animation: pl-fade 600ms 380ms ease forwards;
+      }
+      .pl-bar { width: 132px; height: 2px; margin-top: 8px; background: #e2e8f0; overflow: hidden; border-radius: 2px; }
+      .pl-bar::after {
+        content: ""; display: block; width: 40%; height: 100%; background: #0e4ba8;
+        animation: pl-bar 1.1s ease-in-out infinite;
+      }
+      @keyframes pl-in { to { opacity: 1; transform: none; } }
+      @keyframes pl-fade { to { opacity: 1; } }
+      @keyframes pl-bar { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+      @media (prefers-reduced-motion: reduce) {
+        .pl-blocks span, .pl-name { animation: none; opacity: 1; transform: none; }
+        .pl-bar::after { animation: none; width: 100%; }
+      }
+    </style>
+    <!-- Sem JavaScript: não mostra a tela de carregamento nem esconde conteúdo animado -->
+    <noscript><style>#preloader { display: none; } .reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+
+    <!-- Dados estruturados: empresa, localização, sócios e serviços -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "AccountingService",
+      "@id": "https://jjrcontabilidade.com.br/#empresa",
       "name": "JJR Contabilidade",
-      "url": "https://jjrcontabilidade.com.br",
+      "url": "https://jjrcontabilidade.com.br/",
       "logo": "https://jjrcontabilidade.com.br/logo.png",
-      "image": "https://jjrcontabilidade.com.br/logo.png",
-      "description": "Assessoria contábil especializada, abertura de empresa, planejamento tributário e segurança jurídica para o seu negócio.",
+      "image": "https://jjrcontabilidade.com.br/og-image.jpg",
+      "description": "Escritório de contabilidade em Sapé-PB com registro ativo no CRC. Abertura de empresa, contabilidade mensal, troca de contador, transição de MEI para ME e Imposto de Renda, com atendimento 100% online.",
       "telephone": "+55-83-99100-6990",
+      "email": "contato@jjrcontabilidade.com.br",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Av. Comendador Renato Ribeiro Coutinho, 1097, 1° andar, Sala 3",
+        "addressLocality": "Sapé",
+        "addressRegion": "PB",
         "addressCountry": "BR"
       },
+      "areaServed": [
+        { "@type": "City", "name": "Sapé" },
+        { "@type": "State", "name": "Paraíba" },
+        { "@type": "Country", "name": "Brasil" }
+      ],
+      "availableLanguage": "pt-BR",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-83-99100-6990",
+        "contactType": "customer service",
+        "availableLanguage": "pt-BR"
+      },
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "João Antonio da Costa Neto",
+          "jobTitle": "Sócio-fundador, especialista em Gestão Tributária",
+          "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidade Federal da Paraíba (UFPB)" }
+        },
+        {
+          "@type": "Person",
+          "name": "Jorge Antonio Marinho Neto",
+          "jobTitle": "Sócio-fundador, especialista em Planejamento Tributário",
+          "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidade Presbiteriana Mackenzie" }
+        },
+        {
+          "@type": "Person",
+          "name": "Rodrigo Lima de Amorim",
+          "jobTitle": "Sócio-fundador, especialista em RH e Departamento Pessoal",
+          "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidade Presbiteriana Mackenzie" }
+        }
+      ],
+      "knowsAbout": [
+        "Contabilidade empresarial",
+        "Planejamento tributário",
+        "Simples Nacional e Fator R",
+        "Abertura de empresa",
+        "Departamento pessoal e eSocial",
+        "Imposto de Renda Pessoa Física e Jurídica"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de contabilidade",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura e formalização de empresa", "description": "Todo o processo burocrático, do CNPJ ao alvará." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade mensal", "description": "Gestão contábil, fiscal e trabalhista completa." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Troca de contabilidade", "description": "Migração da empresa para a JJR com transição assistida." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transição de MEI para ME", "description": "Desenquadramento do MEI e mudança para Microempresa." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Imposto de Renda", "description": "Declaração de Pessoa Física e Jurídica." } }
+        ]
+      },
       "sameAs": [
-        "https://www.instagram.com/jjrcontabilidade"
+        "https://www.instagram.com/jjrcontabilidade/"
       ]
     }
     </script>
@@ -62,12 +165,25 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
+      "@id": "https://jjrcontabilidade.com.br/#site",
       "name": "JJR Contabilidade",
-      "url": "https://jjrcontabilidade.com.br"
+      "url": "https://jjrcontabilidade.com.br/",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://jjrcontabilidade.com.br/#empresa" }
     }
     </script>
 </head>
   <body>
+    <!-- Tela de carregamento: removida por index.tsx quando a página fica pronta -->
+    <div id="preloader" role="status" aria-label="Carregando">
+      <div class="pl-mark" aria-hidden="true">
+        <div class="pl-blocks"><span>J</span><span>J</span><span>R</span></div>
+        <div class="pl-name">CONTABILIDADE</div>
+        <div class="pl-bar"></div>
+      </div>
+    </div>
+    <!-- Segurança: se o JavaScript principal falhar, a tela de carregamento sai sozinha -->
+    <script>setTimeout(function(){var p=document.getElementById('preloader');if(p)p.remove();},4000);</script>
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>

@@ -30,7 +30,7 @@
 
   /* === TIPOGRAFIA === */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
 
   /* Tamanhos de Fonte */
   --text-xs: 0.75rem;

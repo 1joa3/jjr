@@ -1,94 +1,99 @@
 // Importações React e ícones
 import React from 'react';
-import { Instagram, Facebook, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { Logo, WHATSAPP_URL } from './ui';
+
+const socialLinks = [
+  { label: 'Instagram', href: 'https://www.instagram.com/jjrcontabilidade/', Icon: Instagram },
+  { label: 'WhatsApp', href: WHATSAPP_URL, Icon: MessageCircle },
+  { label: 'E-mail', href: 'mailto:contato@jjrcontabilidade.com.br', Icon: Mail },
+];
 
 // Componente de Rodapé do site
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-20 pb-10">
-      <div className="container mx-auto px-4 md:px-8">
-        {/* Grade de 4 colunas em desktop, empilhadas em mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-
-          {/* Coluna 1: Marca e redes sociais */}
+    <footer className="bg-navy-950 pt-20 pb-10 text-slate-400">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.3fr]">
+          {/* Marca e redes sociais */}
           <div className="space-y-6">
-            {/* Logo da empresa */}
-            <a href="#" className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-white flex items-center justify-center rounded-lg">
-                <span className="text-blue-900 font-bold text-xl">JJR</span>
-              </div>
-              <span className="text-white text-xl font-bold tracking-tight">Contabilidade</span>
+            <a href="#" className="inline-block" aria-label="JJR Contabilidade - início">
+              <Logo light />
             </a>
-            {/* Descrição da empresa */}
-            <p className="text-slate-400 leading-relaxed">
+            <p className="max-w-xs leading-relaxed">
               Especialistas em contabilidade estratégica e consultoria financeira para empresas de todos os portes.
             </p>
-            {/* Ícones de redes sociais */}
-            <div className="flex space-x-4">
-              <a href="https://www.instagram.com/jjrcontabilidade/" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#0e4ba8] transition-colors text-white">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#0e4ba8] transition-colors text-white">
-                <Linkedin size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-[#0e4ba8] transition-colors text-white">
-                <Facebook size={20} />
-              </a>
+            <div className="flex gap-3">
+              {socialLinks.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith('http') ? '_blank' : undefined}
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-300 transition-colors hover:border-brand-500 hover:bg-brand-600 hover:text-white"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Coluna 2: Links de Serviços */}
+          {/* Serviços */}
           <div>
-            <h5 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Serviços</h5>
-            <ul className="space-y-4">
-              <li><a href="#servicos" className="hover:text-slate-200 transition-colors">Abertura de Empresa</a></li>
-              <li><a href="#servicos" className="hover:text-slate-200 transition-colors">Contabilidade Mensal</a></li>
-              <li><a href="#servicos" className="hover:text-slate-200 transition-colors">Migração de Contabilidade</a></li>
-              <li><a href="#servicos" className="hover:text-slate-200 transition-colors">MEI para ME</a></li>
+            <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-white">Serviços</h3>
+            <ul className="space-y-3">
+              {['Abertura de Empresa', 'Contabilidade Mensal', 'Migração de Contabilidade', 'MEI para ME', 'Imposto de Renda'].map(
+                (item) => (
+                  <li key={item}>
+                    <a href="#servicos" className="transition-colors hover:text-white">{item}</a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
-          {/* Coluna 3: Links Úteis/Navegação */}
+          {/* Navegação */}
           <div>
-            <h5 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Links Úteis</h5>
-            <ul className="space-y-4">
-              <li><a href="#" className="hover:text-slate-200 transition-colors">Home</a></li>
-              <li><a href="#como-funciona" className="hover:text-slate-200 transition-colors">Como Funciona</a></li>
-              <li><a href="#contato" className="hover:text-slate-200 transition-colors">Falar com Consultor</a></li>
-              <li><a href="#" className="hover:text-slate-200 transition-colors">Política de Privacidade</a></li>
+            <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-white">Navegação</h3>
+            <ul className="space-y-3">
+              <li><a href="#" className="transition-colors hover:text-white">Início</a></li>
+              <li><a href="#diferenciais" className="transition-colors hover:text-white">Diferenciais</a></li>
+              <li><a href="#como-funciona" className="transition-colors hover:text-white">Equipe</a></li>
+              <li><a href="#duvidas" className="transition-colors hover:text-white">Dúvidas frequentes</a></li>
+              <li><a href="#contato" className="transition-colors hover:text-white">Falar com consultor</a></li>
             </ul>
           </div>
 
-          {/* Coluna 4: Informações de Contato */}
+          {/* Contato */}
           <div>
-            <h5 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Fale Conosco</h5>
+            <h3 className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-white">Fale conosco</h3>
             <ul className="space-y-4">
-              {/* Telefone */}
               <li className="flex items-start gap-3">
-                <Phone className="text-[#0e4ba8] bg-slate-800 p-1 rounded shrink-0" size={20} />
-                <span>(83) 99100-6990</span>
+                <Phone size={17} className="mt-0.5 shrink-0 text-brand-400" />
+                <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                  (83) 99100-6990
+                </a>
               </li>
-              {/* Email */}
               <li className="flex items-start gap-3">
-                <Mail className="text-[#0e4ba8] bg-slate-800 p-1 rounded shrink-0" size={20} />
-                <span>contato@jjrcontabilidade.com.br</span>
+                <Mail size={17} className="mt-0.5 shrink-0 text-brand-400" />
+                <a href="mailto:contato@jjrcontabilidade.com.br" className="break-all hover:text-white">
+                  contato@jjrcontabilidade.com.br
+                </a>
               </li>
-              {/* Endereço */}
               <li className="flex items-start gap-3">
-                <MapPin className="text-[#0e4ba8] bg-slate-800 p-1 rounded shrink-0" size={20} />
+                <MapPin size={17} className="mt-0.5 shrink-0 text-brand-400" />
                 <span>Av. Comendador Renato Ribeiro Coutinho, 1097, 1° andar, Sala 3 - Sapé, PB</span>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Linha inferior com copyright e créditos */}
-        <div className="pt-10 border-t border-slate-800 text-center md:text-left flex flex-col md:row items-center justify-between gap-4">
-          <p className="text-sm text-slate-500">
-            © 2025 JJR Contabilidade. Todos os direitos reservados.
-          </p>
-          <p className="text-sm text-slate-600 flex items-center gap-1">
-            Desenvolvido por <span className="font-bold text-slate-500"> Cocreate </span>
+        {/* Linha inferior */}
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm md:flex-row">
+          <p suppressHydrationWarning>© {new Date().getFullYear()} JJR Contabilidade. Todos os direitos reservados.</p>
+          <p className="text-slate-500">
+            Desenvolvido por <span className="font-semibold text-slate-400">Cocreate</span>
           </p>
         </div>
       </div>

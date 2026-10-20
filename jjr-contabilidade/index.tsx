@@ -14,13 +14,30 @@ if (!rootElement) {
   throw new Error("Could not find root element to mount to");
 }
 
-// Cria a raiz React usando o novo createRoot (React 18+)
-const root = ReactDOM.createRoot(rootElement);
-
-// Renderiza o componente App dentro do StrictMode
-// StrictMode ajuda a identificar potenciais problemas durante o desenvolvimento
-root.render(
+const app = (
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
+
+// No build de produção o HTML já vem pré-renderizado (scripts/prerender.mjs):
+// nesse caso o React apenas "hidrata" o conteúdo existente. No `npm run dev`
+// o root vem vazio e a aplicação é renderizada do zero.
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrateRoot(rootElement, app);
+} else {
+  ReactDOM.createRoot(rootElement).render(app);
+}
+
+// Remove a tela de carregamento quando as fontes estiverem prontas
+// (com limite de tempo para nunca segurar o visitante)
+const preloader = document.getElementById('preloader');
+if (preloader) {
+  const hide = () => {
+    preloader.classList.add('is-hidden');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
+    setTimeout(() => preloader.remove(), 800);
+  };
+  const timeout = new Promise((resolve) => setTimeout(resolve, 1500));
+  Promise.race([document.fonts?.ready ?? Promise.resolve(), timeout]).then(hide);
+}
